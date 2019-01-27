@@ -1,0 +1,10 @@
+{
+  "short_name": "React Routing Example",
+  "name": "Heirloom Tomatoes React Routing Example
+  "icons": [
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
