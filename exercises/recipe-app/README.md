@@ -59,14 +59,6 @@ export default App;
 
 The recipe index page should receive a list of recipes from App and display each
 
-# Stretch goals
-
-## Add a detail page
-
-Our app has a home page, and a recipe index page so far. But we want to create a new page called ```RecipeDetail```
-
-RecipeDetail should receive the information for one recipe from the index page, and display it.
-
 ## Page Not Found
 
 What if someone requests a page that doesn't exist? Create a route to handle that.
