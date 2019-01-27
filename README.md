@@ -51,7 +51,7 @@ The other two are pretty similar.  You can check them all out in the sample proj
 
 ## React Router
 
-![react-router](../assets/react-router.png)
+![react-router](//raw.githubusercontent.com/LEARNAcademy/react-router/master/assets/react-router.png)
 
 Ready to see how we can navigate to these pages?  Great, let's do it.
 
