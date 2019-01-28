@@ -1,28 +1,56 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom'
+
+import './App.css'
+import Home from "./pages/Home"
+import AboutMe from "./pages/AboutMe"
+import Skills from "./pages/Skills"
+import Projects from "./pages/Projects"
+import Contact from "./pages/Contact"
+import PageNotFound from "./pages/PageNotFound"
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Enrique <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About Me</Link>
+              </li>
+              <li>
+                <Link to="/skills">Skills</Link>
+              </li>
+              <li>
+                <Link to="/projects">My Projects</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact Me</Link>
+              </li>
+            </ul>
+          </nav>
+          <Switch>
+            <Route path="/" exact component={Home}/>
+            <Route path="/about" component={AboutMe}/>
+            <Route path="/projects" component={Projects}/>
+            <Route path="/skills" component={Skills}/>
+            <Route path="/contact" component={Contact}/>
+            <Route component={PageNotFound}/>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
 
-export default App;
+export default App
