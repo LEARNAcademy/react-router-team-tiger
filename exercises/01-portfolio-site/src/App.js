@@ -5,8 +5,11 @@ import {
   Link,
   Switch
 } from 'react-router-dom'
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 import './App.css'
+import TreasureHunt from "./pages/TreasureHunt"
+import TicTacToe from "./pages/TicTacToe"
 import Home from "./pages/Home"
 import AboutMe from "./pages/AboutMe"
 import Skills from "./pages/Skills"
@@ -20,31 +23,44 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About Me</Link>
-              </li>
-              <li>
-                <Link to="/skills">Skills</Link>
-              </li>
-              <li>
-                <Link to="/projects">My Projects</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact Me</Link>
-              </li>
-            </ul>
-          </nav>
+          <Navbar>
+            <Navbar.Header>
+              <Navbar.Brand>
+                <a href="/">Team Tiger's Portfolio</a>
+              </Navbar.Brand>
+            </Navbar.Header>
+            <Nav>
+              <NavItem eventKey={1} href="/about">
+                About Me
+              </NavItem>
+              <NavItem eventKey={2} href="/skills">
+                Skills
+              </NavItem>
+              <NavDropdown eventKey={3} title="Projects" id="basic-nav-dropdown">
+      <MenuItem href="/projects/tictactoe" eventKey={3.1}>Tic Tac Toe</MenuItem>
+      <MenuItem href="/projects/treasurehunt" eventKey={3.2}>Treasure Hunt</MenuItem>
+    </NavDropdown>
+    <NavItem eventKey={4} href="/contact">
+    Contact Me
+    </NavItem>
+            </Nav>
+          </Navbar>
+
+
+
+
+
+
+
+
           <Switch>
+            <Route path="/projects/tictactoe" exact component={TicTacToe}/>
+            <Route path="/projects/treasurehunt" exact component={TreasureHunt}/>
             <Route path="/" exact component={Home}/>
-            <Route path="/about" component={AboutMe}/>
-            <Route path="/projects" component={Projects}/>
-            <Route path="/skills" component={Skills}/>
-            <Route path="/contact" component={Contact}/>
+            <Route path="/about" exact component={AboutMe}/>
+            <Route path="/projects" exact component={Projects}/>
+            <Route path="/skills" exact component={Skills}/>
+            <Route path="/contact" exact component={Contact}/>
             <Route component={PageNotFound}/>
           </Switch>
         </div>

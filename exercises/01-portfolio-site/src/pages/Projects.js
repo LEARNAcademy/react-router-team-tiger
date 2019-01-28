@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
+import {
+  BrowserRouter as Router,
+  Link
+  } from 'react-router-dom'
+
+import ProjectItem from "./ProjectItem.js"
 
 class Projects extends Component {
   render() {
     return (
       <div>
-        <h1>Projects</h1>
-          <ul>
-          <li>Tic Tac Toe</li>
-          <li>Color Picker</li>
-          <li>Rock Paper Scissors</li>
-          <li>Treasure Hunt</li>
-          </ul>
+      <Link to="projects/tictactoe">Tic Tac Toe</Link><br></br>
+      <Link to="projects/treasurehunt">Treasure Hunt</Link>
       </div>
     )
   }
